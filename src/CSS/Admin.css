@@ -1,0 +1,8 @@
+.verification-table {
+    min-width: 800px;
+    margin-top: 60px;
+}
+
+.verification-table-header {
+    background-color: var(--app-primary);
+}
