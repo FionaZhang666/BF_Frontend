@@ -14,17 +14,18 @@ import {
 import React, { useContext, useEffect, useMemo, useState } from "react";
 
 import HomeIcon from "@mui/icons-material/Home";
-import PostAddIcon from '@mui/icons-material/PostAdd';
-import BookmarksIcon from '@mui/icons-material/Bookmarks';
+import SchoolIcon from '@mui/icons-material/School';
+import InterpreterModeIcon from '@mui/icons-material/InterpreterMode';
+
+
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import MenuIcon from "@mui/icons-material/Menu";
-import LogoBar from '../Assets/logo_bar.png';
+import LogoBar from '../Assets/logo_bar_new.png';
 
 import "../CSS/HomeFrame.css";
 import "../CSS/Layout.css";
 import { GlobalContext } from "../utils/GlobalContext";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import { backendCall } from "../utils/Network";
 
 export default function HomeFrame({ currentPageName }) {
@@ -51,16 +52,21 @@ export default function HomeFrame({ currentPageName }) {
 
   const MenuTabNames = useMemo(() => {
     const menus = [];
+     
     // 只要改commonButton来配置menu
     const commonButton = [
       ["Home", "/", <HomeIcon sx={{ color: "primary" }} />, 1],
+      ["Teacher view", "/teacher", <InterpreterModeIcon sx={{ color: "primary" }} />, 1],
+      ["Student View", "/student", <SchoolIcon sx={{ color: "primary" }} />, 1],
+      
     ];
 
     // 根据admin的判断条件来改参数
     if (user.role === "admin") {
-      commonButton.push(["Admin", "/admin", <AccountCircleIcon sx={{ color: "primary" }} />, 1]);
+      commonButton.push(["Administrator", "/admin", <AccountCircleIcon sx={{ color: "primary" }} />, 1]);
     }
     
+
     for (const item of commonButton) {
       if (item[3] == 1) {
         // parent menu
@@ -78,6 +84,8 @@ export default function HomeFrame({ currentPageName }) {
               <ListItemText primary={item[0]} />
             </ListItemButton>
           </ListItem>
+
+
         );
       } else {
         // secondary menu
@@ -139,7 +147,7 @@ export default function HomeFrame({ currentPageName }) {
           >
             Sign Out
           </Button>
-          <Typography align="center">Copyright ©2023 by Blackfoot Learning App</Typography>
+          <Typography align="center">Copyright ©2023 by Blackfeet Learning App</Typography>
         </Box>
       </Drawer>
       <Box className="header-bar">

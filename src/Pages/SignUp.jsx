@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import '../CSS/Layout.css';
 import '../CSS/Authentication.css';
 
-import LogoBar from '../Assets/logo_bar_white.png';
+// import LogoBar from '../Assets/logo_bar_white.png';
 
 import { GlobalContext } from "../utils/GlobalContext";
 
@@ -76,17 +76,9 @@ export default function SignUp() {
 
   const FormInputs = useMemo(() => {
     return (<>
-      <Box>
-        <Typography fontWeight="bold">Role</Typography>
-        <RadioGroup row className="tow-columns"
-          value={role}
-          onChange={(e) => { setRole(e.target.value); }}
-        >
-          {/* 需要把老师和学生对应的value改掉 */}
-          <FormControlLabel value="student" control={<Radio />} label="Student" />
-          <FormControlLabel value="teacher" control={<Radio />} label="Teacher" />
-        </RadioGroup>
-      </Box>
+
+      
+
       <CssTextField fullWidth
         label="Username"
         size="small"
@@ -124,10 +116,13 @@ export default function SignUp() {
 
   return (<Box className="background">
     <Box className="middle-in-page">
+      <Typography variant="h1" sx={{ mb: 2, textAlign: 'center' }}>
+          Sign Up Administrator!
+        </Typography>
       <Box
         component="img"
         sx={{ width: "420px" }}
-        src={LogoBar}
+        // src={LogoBar}
       />
       <Box className="form-body">
         {FormInputs}

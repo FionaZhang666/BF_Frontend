@@ -1,0 +1,12 @@
+.book-list {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.cover {
+    width: 200px;
+    height: 300px;
+    border: 1px solid var(--app-light-purple);
+}

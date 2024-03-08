@@ -1,4 +1,4 @@
-import React, { useState, createContext, useEffect } from "react";
+import React, { useState, createContext, useEffect, useContext } from "react";
 import { useLocation, Navigate } from "react-router-dom";
 import "../CSS/Layout.css";
 import { backendCall } from "./Network";
@@ -6,6 +6,7 @@ import { CircularProgress } from "@mui/material";
 
 
 export const GlobalContext = createContext(null);
+// const GlobalContext = createContext(null);
 
 const pageWithoutLogin = new Set(["/login", "/signup"]);
 
@@ -25,6 +26,7 @@ export function GlobalWrapper({ children }) {
     token: "xxxxxxx",
     name: "Fiona",
   });
+
 
   const globals = {
     openMenu,
@@ -46,7 +48,7 @@ export function GlobalWrapper({ children }) {
       return;
     }
 
-    // 测试用，写死user
+    // Testing use
     setUser(mockUser);
 
     // 后端调用，使用token登录

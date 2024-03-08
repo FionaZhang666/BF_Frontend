@@ -12,7 +12,7 @@ import { useNavigate } from "react-router-dom";
 import "../CSS/Layout.css";
 import "../CSS/Authentication.css";
 
-import LogoBar from "../Assets/logo_bar_white.png";
+// import LogoBar from "../Assets/logo_bar_white.png";
 
 import { GlobalContext } from "../utils/GlobalContext";
 
@@ -77,7 +77,11 @@ export default function Login() {
   return (
     <Box className="background">
       <Box className="middle-in-page">
-        <Box component="img" sx={{ width: "420px" }} src={LogoBar} />
+        <Typography variant="h4" sx={{ mb: 2, textAlign: 'center' }}>
+          Welcome to the Admin Panel!
+        </Typography>
+
+
         <Box className="form-body">
           <Box>
             <Typography fontWeight="bold">Username</Typography>

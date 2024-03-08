@@ -1,7 +1,10 @@
 .background {
     width: 100vw;
     height: 100vh;
-    background-image: url("../Assets/background.jpg");
+    background-image: url("../Assets/background1.jpg");
+    background-size: cover;  
+    background-position: center; 
+    background-repeat: no-repeat; 
 }
 
 .middle-in-page {

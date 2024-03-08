@@ -57,6 +57,29 @@ const theme = createTheme({
     fontSize: 14,
   },
   components: {
+    MuiTableCell: {
+      styleOverrides: {
+        root: {
+          // Set your desired font size here
+          fontSize: '18px', // Example font size
+        },
+      },
+    },
+    MuiTableHeader: {
+      styleOverrides: {
+        root: {
+          fontSize: '20px',
+          fontWeight: "bold",
+        },
+      },
+    },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          marginBottom: '5px', 
+        },
+      },
+    },
     MuiTypography: {
       defaultProps: {
         component: "div",
@@ -77,6 +100,7 @@ const theme = createTheme({
       },
     },
   },
+
 });
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
