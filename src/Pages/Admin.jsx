@@ -271,7 +271,6 @@ export default function Admin() {
                   <TableCell>{row.certification}</TableCell>
                   <TableCell>{row.date}</TableCell>
                   <TableCell>
-                    {/* TODO 需要自定义approve按钮的行为 */}
                     <Button variant="contained" color="third" sx={{ width: "112px" }} className="button-spacing" onClick={() => handleApprove(row.teacherId, 'teacher')}>Approve</Button>
                     <Button variant="contained" color="third" sx={{ width: "112px" }} onClick={() => handleOpenDialog(row.teacherId, 'teacher')}>Not Approved</Button>
                   </TableCell>
@@ -312,9 +311,8 @@ export default function Admin() {
               <TableCell>{row.link}</TableCell>
               <TableCell>{row.date}</TableCell>
               <TableCell>
-                {/* TODO 需要自定义approve按钮的行为 */}
-                <Button variant="contained" color="third" className="button-spacing" onClick={() => handleApprove(row.contentId, 'content')}>Approve</Button>
-                <Button variant="contained" color="third" onClick={() => handleOpenDialog(row.contentId, 'content')}>Not Approved</Button>
+                <Button variant="contained" color="third" sx={{ width: "112px" }} onClick={() => handleApprove(row.contentId, 'content')}>Approve</Button>
+                <Button variant="contained" color="third" sx={{ width: "112px" }} onClick={() => handleOpenDialog(row.contentId, 'content')}>Not Approved</Button>
               </TableCell>
             </TableRow>
           ))}
@@ -348,9 +346,8 @@ export default function Admin() {
                 <TableCell>{row.description}</TableCell>
                 <TableCell>{row.date}</TableCell>
                 <TableCell>
-                  {/* TODO 需要自定义approve按钮的行为 */}
-                  <Button variant="contained" color="third" className="button-spacing" onClick={() => handleApprove(row.courseID, 'course')}>Approve</Button>
-                  <Button variant="contained" color="third" onClick={() => handleOpenDialog(row.courseID, 'course')}>Not Approved</Button>
+                  <Button variant="contained" color="third" sx={{ width: "112px" }} onClick={() => handleApprove(row.courseID, 'course')}>Approve</Button>
+                  <Button variant="contained" color="third" sx={{ width: "112px" }} onClick={() => handleOpenDialog(row.courseID, 'course')}>Not Approved</Button>
                 </TableCell>
               </TableRow>
             ))}
@@ -426,7 +423,7 @@ export default function Admin() {
           </DialogContent>
           <DialogActions>
             <Button onClick={handleCloseDialog}>Cancle</Button>
-            <Button onClick={handleSubmitReason}>Need Change</Button>
+            <Button onClick={handleSubmitReason}>Enter</Button>
           </DialogActions>
         </Dialog>
       </Box>
